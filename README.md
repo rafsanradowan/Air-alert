@@ -1,7 +1,6 @@
 # airalert: 24-hour-ahead PM2.5 alert for Beijing (DVC + Feast project)
 
 > Course project for DS-4491 Machine Learning Systems Design.
-> **TODO before submitting:** replace every `<<...>>` placeholder below with your own text/results.
 
 ## 1. Problem and dataset
 **Problem.** Given the current pollution and weather readings (plus recent history) at a monitoring station, predict whether PM2.5 will be **at least 75 µg/m³ 24 hours from now** (binary classification, with probabilities).
@@ -27,7 +26,6 @@ docs/VIVA_NOTES.md
 ```
 
 ## 4. DVC pipeline
-<<paste the output of `dvc dag` here>>
 
 | Stage | What it does | Main outputs |
 |---|---|---|
@@ -74,9 +72,7 @@ python src/cli.py predict --station Dongsi
 ```
 To start from scratch: download the dataset from UCI, put the 12 station CSVs in `data/raw/`, run `dvc add data/raw`, then `dvc repro`.
 
-## 7. Results
-<<paste the table printed by `python src/cli.py compare`>>
 
-<<paste a short `python src/cli.py backtest ...` output>>
 
-**Limitations.** <<e.g. one city and four years of data (2013–2017), wind direction unused, one threshold (75 µg/m³), models not retrained over time>>
+
+
