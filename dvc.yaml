@@ -1,3 +1,4 @@
+# The pipeline WITH Feast (copy this over dvc.yaml in Step 4).
 # The pipeline. Each stage says: command (cmd), what it reads (deps, params), what it writes (outs).
 # DVC re-runs a stage only when one of its deps, params or its command changed.
 stages:
@@ -27,13 +28,31 @@ stages:
       - feature_repo/data/station_weather.parquet
       - data/processed/entity_df.parquet
 
-  build_training_set:
-    cmd: python src/build_training_set.py
+  feast_apply:
+    cmd: python src/feast_apply.py
     deps:
-      - data/processed/entity_df.parquet
+      - feature_repo/features.py
+      - feature_repo/feature_store.yaml
       - feature_repo/data/station_pollution.parquet
       - feature_repo/data/station_weather.parquet
-      - src/build_training_set.py
+      - src/feast_apply.py
+      - src/common.py
+    params:
+      - feast.ttl_days
+    outs:
+      - feature_repo/data/registry.db
+      - feature_repo/data/online_store.db
+
+  build_training_set:
+    cmd: python src/build_training_set_feast.py
+    deps:
+      - data/processed/entity_df.parquet
+      - feature_repo/data/registry.db
+      - feature_repo/features.py
+      - feature_repo/feature_store.yaml
+      - feature_repo/data/station_pollution.parquet
+      - feature_repo/data/station_weather.parquet
+      - src/build_training_set_feast.py
       - src/common.py
     outs:
       - data/processed/dataset.parquet

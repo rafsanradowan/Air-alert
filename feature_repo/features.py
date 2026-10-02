@@ -1,19 +1,11 @@
-"""Feast definitions for airalert.  Goes in: feature_repo/features.py
-
-Entity        : station
-FeatureViews  : station_pollution, station_weather  (one per parquet file)
-FeatureService: alert_model_v1  (both views together = the model's input)
-
-The column list of each view is read from the parquet file itself, so the
-definitions can never disagree with what build_features.py wrote.
-"""
+"""Feast definitions for airalert.  Goes in: feature_repo/features.py"""
 from datetime import timedelta
 from pathlib import Path
 
 import pyarrow as pa
 import pyarrow.parquet as pq
 import yaml
-from feast import Entity, FeatureService, FeatureView, Field, FileSource
+from feast import Entity, FeatureService, FeatureView, Field, FileSource, ValueType
 from feast.types import Float32, Float64, Int64
 
 # Set to False for an offline-only project (no online store). See Step 4, Option B.
@@ -46,11 +38,13 @@ def _schema(parquet_name: str):
     ]
 
 
-station = Entity(name="station", join_keys=["station"],
-                 description="Air-quality monitoring station")
+station = Entity(
+    name="station",
+    join_keys=["station"],
+    value_type=ValueType.STRING,
+    description="Air-quality monitoring station",
+)
 
-# Relative path on purpose: Feast resolves it from the feature_repo folder,
-# so the registry stays valid when the project is cloned somewhere else.
 pollution_source = FileSource(
     name="station_pollution_source",
     path="data/station_pollution.parquet",
@@ -62,7 +56,7 @@ weather_source = FileSource(
     timestamp_field="event_timestamp",
 )
 
-TTL = timedelta(days=_ttl_days())   # must be LONG: the data is from 2013-2017
+TTL = timedelta(days=_ttl_days())
 
 station_pollution = FeatureView(
     name="station_pollution",

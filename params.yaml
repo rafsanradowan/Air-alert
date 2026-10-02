@@ -11,7 +11,7 @@ features:
   windows_hours: [6, 24]  # [short, long] rolling windows
 
 feast:
-  ttl_days: 3650   # MUST be long: the data is from 2013-2017. A short TTL makes Feast return empty (null) features for old rows.
+  ttl_days: 2   # 24 hours is plenty for hourly data point-in-time lookups
 
 split:
   cutoff_date: "2016-03-01"   # test set = everything from this date on (the last year)

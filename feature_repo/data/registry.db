@@ -1,0 +1,115 @@
+
+^
+>
+stationAir-quality monitoring station"stationJairalert
+¢ÙÿÕ¸ü¢ÙÿÕ¸ü
+?
+
+__dummy"
+__dummy_idJairalert
+¢ÙÿÕø‘Ûü¢ÙÿÕø‘Ûü1"$ca21fe61-d9a0-43ed-8695-8b6fb2b74ef4*£ÙÿÕ£˜Û2¤
+ğ
+station_pollutionairalertstation"
+pm25"
+pm10"
+so2"
+no2"
+co"
+o3"
+pm25_mean_short"
+pm25_mean_long"
+pm25_max_long"
+pm25_change_3h2€Æ
+:£event_timestampZ data/station_pollution.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_pollution_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸„¤û@b
+station’latest/
+¢ÙÿÕ¸ü£ÙÿÕ˜á¦;
+€ß¿‰€ØÅ02Õ
+ 
+station_weatherairalertstation"
+temp"
+pres"
+dewp"
+rain"
+wspm"
+wspm_mean_short"
+wspm_mean_long"
+rain_sum_long"
+pres_change_3h"
+hour_sin"
+hour_cos"
+	month_sin"
+	month_cos2€Æ
+:Ÿevent_timestampZdata/station_weather.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_weather_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸ü@b
+station’latest0
+¢ÙÿÕ¸ü£ÙÿÕ£˜Û
+€ß¿‰€ØÅ0:Ÿ
+ş
+alert_model_v1airalert—
+station_pollution
+pm25
+pm10
+so2
+no2
+co
+o3
+pm25_mean_short
+pm25_mean_long
+pm25_max_long
+pm25_change_3hBoevent_timestampZ data/station_pollution.parquet¢station_pollution_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸„¤ûZfeatureViewÇ
+station_weather
+temp
+pres
+dewp
+rain
+wspm
+wspm_mean_short
+wspm_mean_long
+rain_sum_long
+pres_change_3h
+hour_sin
+hour_cos
+	month_sin
+	month_cosBkevent_timestampZdata/station_weather.parquet¢station_weather_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸üZfeatureView
+¢ÙÿÕø‘Ûü¢ÙÿÕø‘Ûüb®event_timestampZ data/station_pollution.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_pollution_sourceªairalert’¢ÙÿÕˆòÉ"¢ÙÿÕ¸„¤ûbªevent_timestampZdata/station_weather.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_weather_sourceªairalert’¢ÙÿÕˆòÉ"¢ÙÿÕ¸üz0
+airalert$f4835074-3957-4307-a247-db253d4f962eŠ*
+
+
+airalert
+¢ÙÿÕ¸„¤û¢ÙÿÕ¸„¤û’š
+ó
+station_pollutionairalert"feature_view*‘
+ğ
+station_pollutionairalertstation"
+pm25"
+pm10"
+so2"
+no2"
+co"
+o3"
+pm25_mean_short"
+pm25_mean_long"
+pm25_max_long"
+pm25_change_3h2€Æ
+:£event_timestampZ data/station_pollution.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_pollution_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸„¤û@b
+station’latest
+¢ÙÿÕ¸ü¢ÙÿÕ¸ü2¢ÙÿÕ¸üB$67d9e295-7bac-43d1-9a26-a79abb81c7ed
+¡
+station_weatherairalert"feature_view*Á
+ 
+station_weatherairalertstation"
+temp"
+pres"
+dewp"
+rain"
+wspm"
+wspm_mean_short"
+wspm_mean_long"
+rain_sum_long"
+pres_change_3h"
+hour_sin"
+hour_cos"
+	month_sin"
+	month_cos2€Æ
+:Ÿevent_timestampZdata/station_weather.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢station_weather_source’¢ÙÿÕˆòÉ"¢ÙÿÕ¸ü@b
+station’latest
+¢ÙÿÕ¸ü¢ÙÿÕ¸ü2¢ÙÿÕ¸üB$a47d70a5-07ae-4ee2-9faf-e2451126b854

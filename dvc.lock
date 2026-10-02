@@ -60,12 +60,16 @@ stages:
       md5: c407f0cf96849d53123004ad75b3c041
       size: 5166053
   build_training_set:
-    cmd: python src/build_training_set.py
+    cmd: python src/build_training_set_feast.py
     deps:
     - path: data/processed/entity_df.parquet
       hash: md5
       md5: 72c11c6cb4bb49e9b1c2b7983fd98526
       size: 411468
+    - path: feature_repo/data/registry.db
+      hash: md5
+      md5: 7526d0b776814972a01d92db53bb2af4
+      size: 3284
     - path: feature_repo/data/station_pollution.parquet
       hash: md5
       md5: 5d058ce34833d807e8513839a43e0a02
@@ -74,10 +78,18 @@ stages:
       hash: md5
       md5: c407f0cf96849d53123004ad75b3c041
       size: 5166053
-    - path: src/build_training_set.py
+    - path: feature_repo/feature_store.yaml
       hash: md5
-      md5: 21ec8f876a906025b8beda1479903e94
-      size: 816
+      md5: 73beacd5816bec59d835792d4f1441bb
+      size: 191
+    - path: feature_repo/features.py
+      hash: md5
+      md5: 1ff68250d201af67dee10039360d047f
+      size: 2325
+    - path: src/build_training_set_feast.py
+      hash: md5
+      md5: 45765d066717c4803e1e73268adf78d9
+      size: 1020
     - path: src/common.py
       hash: md5
       md5: 4986dd72bd63f1afe7fbe80e5f956052
@@ -220,3 +232,42 @@ stages:
       hash: md5
       md5: 3c557a825e45b8e11e738b26fd3c0ca8
       size: 627
+  feast_apply:
+    cmd: python src/feast_apply.py
+    deps:
+    - path: feature_repo/data/station_pollution.parquet
+      hash: md5
+      md5: 5d058ce34833d807e8513839a43e0a02
+      size: 6297461
+    - path: feature_repo/data/station_weather.parquet
+      hash: md5
+      md5: c407f0cf96849d53123004ad75b3c041
+      size: 5166053
+    - path: feature_repo/feature_store.yaml
+      hash: md5
+      md5: 73beacd5816bec59d835792d4f1441bb
+      size: 191
+    - path: feature_repo/features.py
+      hash: md5
+      md5: 1ff68250d201af67dee10039360d047f
+      size: 2325
+    - path: src/common.py
+      hash: md5
+      md5: 4986dd72bd63f1afe7fbe80e5f956052
+      size: 3828
+    - path: src/feast_apply.py
+      hash: md5
+      md5: 70585e8f16d4785ea76c15603c59c3ad
+      size: 1316
+    params:
+      params.yaml:
+        feast.ttl_days: 2
+    outs:
+    - path: feature_repo/data/online_store.db
+      hash: md5
+      md5: b76bf0405437aacc94df63a859c7685e
+      size: 90112
+    - path: feature_repo/data/registry.db
+      hash: md5
+      md5: 7526d0b776814972a01d92db53bb2af4
+      size: 3284
