@@ -7,7 +7,7 @@
 
 **Dataset.** UCI *Beijing Multi-Site Air Quality* (id 501): hourly data from 12 monitoring stations, 1 Mar 2013 – 28 Feb 2017 (35,064 hours × 12 stations = 420,768 rows). Licence CC BY 4.0.
 Citation: Chen, S. (2017). *Beijing Multi-Site Air Quality* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5RK5G
-The wind-direction column (`wd`) is not used (a text category); this is a known limitation, since wind direction affects pollution transport. <<add your own comment>>
+The wind-direction column (`wd`) is not used (a text category); this is a known limitation, since wind direction affects pollution transport. 
 
 ## 2. ML models
 - **Baselines:** majority class, and *persistence* ("polluted in 24 h if PM2.5 is already ≥ 75 now").
