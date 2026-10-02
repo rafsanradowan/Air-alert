@@ -1,0 +1,11 @@
+pandas
+pyarrow
+numpy
+scipy
+scikit-learn
+joblib
+lightgbm
+pyyaml
+dvc
+feast
+pytest
